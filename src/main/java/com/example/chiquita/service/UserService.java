@@ -33,6 +33,10 @@ public class UserService {
         this.roleRepository = roleRepository;
     }
 
+    public UserEntity getByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     @Transactional
     public UserEntity saveUser(RegisterRequest registerRequest) {
         var userEntity = new UserEntity();

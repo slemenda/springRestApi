@@ -48,7 +48,7 @@ public class LoginController {
                     .body(new ErrorResponse("Invalid password or username"));
         }
 
-        UserDetails userDetails = userService.loadUserByUsername(jwtRequest.username());
+        var userDetails = userService.getByEmail(jwtRequest.username());
         String token = jwtUtils.generateToken(userDetails);
 
         return ResponseEntity.ok().body(new JwtResponse(token));
