@@ -1,6 +1,8 @@
 package com.example.chiquita.controllers;
 
 import com.example.chiquita.requests.RegisterRequest;
+import com.example.chiquita.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,9 +19,17 @@ public class RegisterController {
     // [DELETE] /todos/{id}
     // [GET] /user/{userId}/todos/{id}
 
+    private final UserService userService;
+
+    @Autowired
+    public RegisterController(UserService userService) {
+        this.userService = userService;
+    }
+
     @PostMapping("/user")
     public ResponseEntity<Object> registerUser(@RequestBody @Valid RegisterRequest request) {
 
+        userService.saveUser(request);
         // service ktera nam zaregistruje uzivatele
 
         return ResponseEntity.ok().build();
