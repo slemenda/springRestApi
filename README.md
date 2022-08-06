@@ -1,0 +1,3 @@
+# PSQL
+## CREATE DATABASE todolist;
+## GRANT ALL PRIVILEGES ON DATABASE todolist TO postgres;
