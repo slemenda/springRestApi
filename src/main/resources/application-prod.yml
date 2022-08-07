@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+jwt:
+  secret: supersecretpassword45741
+  refreshSecret: opicak5444
+
+spring:
+  datasource:
+    url: postgres://jqmmejhgirxmyk:92873886d6fa6bc18cd76d921e6a5f915af8b51362a6da60f5913bc0950d09a4@ec2-34-247-72-29.eu-west-1.compute.amazonaws.com:5432/d2585rnkiai7an
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
