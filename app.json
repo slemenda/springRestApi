@@ -1,5 +1,5 @@
 {
-  "name": "zemanito-2",
+  "name": "chimpanzees",
   "buildpacks": [
     {
       "url": "heroku/java"
