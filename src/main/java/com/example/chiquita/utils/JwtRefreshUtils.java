@@ -15,10 +15,10 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Component
-public class JwtUtils implements Serializable {
-    public static final long JWT_TOKEN_VALIDITY = 1 * 60 * 60;
+public class JwtRefreshUtils implements Serializable {
+    public static final long JWT_TOKEN_VALIDITY = 4 * 60 * 60;
 
-    @Value("${jwt.secret}")
+    @Value("${jwt.refreshSecret}")
     private String secretKey;
 
     public String getUsernameFromToken(String token) {
@@ -64,3 +64,4 @@ public class JwtUtils implements Serializable {
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 }
+
